@@ -1,0 +1,128 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #dee2e6;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #e9ecef;
+    font-weight: bold;
+}
+
+td a {
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid #007bff;
+    padding: 4px;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #007bff;
+    text-decoration: none;
+    text-decoration: underline;
+    border: 1px solid #007bff;
+    padding: 4px;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 4px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    position: fixed; /* Position the footer at the bottom of the page */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#footer a {
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #007bff;
+    padding: 4px;
+    left: 0;
+}
+
+.btn {
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid #007bff;
+    padding: 4px;
+    margin: 5px;
+}
+
+.btn:hover {
+    text-decoration: underline;
+}
+
+.bottom-links {
+    position: fixed;
+    left: 0;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    padding: 10px
+}
+
+.border {
+    border: 1px solid #007bff;
+}

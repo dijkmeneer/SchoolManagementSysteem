@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1><a href="{{ path('app_klas_index') }}">Klassen</a></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Leraar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for klas in klassen %}
+                <tr>
+                    <td><a href="{{ path('app_klas_show', {'id': klas.id}) }}">{{ klas.naam }}</a></td>
+                    <td>
+                        {% for leraar in klas.leraar %}
+                            <a href="{{ path('app_leraar_show', {'id': leraar.id}) }}">{{ leraar.naam }}</a>
+                            {% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1><a href="{{ path('app_leraar_index') }}">Leraren</a></h1>
+    <ul>
+        {% for leraar in leraren %}
+            <li><a href="{{ path('app_leraar_show', {'id': leraar.id}) }}">{{ leraar.naam }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h1><a href="{{ path('app_student_index') }}">Studenten</a></h1>
+    <ul>
+        {% for student in studenten %}
+            <li><a href="{{ path('app_student_show', {'id': student.id}) }}">{{ student.naam }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

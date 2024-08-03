@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Leraar{% endblock %}
+
+{% block body %}
+    <h1>Create new Leraar</h1>
+
+    {{ include('leraar/_form.html.twig') }}
+
+    <a class='btn' href="{{ path('app_leraar_index') }}">Terug naar lijst</a>
+{% endblock %}

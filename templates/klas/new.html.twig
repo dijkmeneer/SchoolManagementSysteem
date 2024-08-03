@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Klas{% endblock %}
+
+{% block body %}
+
+    {{ include('klas/_form.html.twig') }}
+
+    <a class='btn' href="{{ path('app_klas_index') }}">Terug naar lijst</a>
+{% endblock %}

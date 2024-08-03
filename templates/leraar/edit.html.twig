@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Leraar{% endblock %}
+
+{% block body %}
+    <h1>Edit Leraar</h1>
+
+    {{ include('leraar/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class='btn' href="{{ path('app_leraar_index') }}">terug naar lijst</a>
+
+    {{ include('leraar/_delete_form.html.twig') }}
+{% endblock %}

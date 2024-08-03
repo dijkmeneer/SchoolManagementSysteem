@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Leraar{% endblock %}
+
+{% block body %}
+    <h1>Leraar</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Naam</th>
+                <td>{{ leraar.naam }}</td>
+            </tr>
+            <tr>
+                <th>Leeftijd</th>
+                <td>{{ leraar.leeftijd }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class='btn' href="{{ path('app_leraar_index') }}">Terug naar lijst</a>
+
+    <a class='btn' href="{{ path('app_leraar_edit', {'id': leraar.id}) }}">Aanpassen</a>
+
+    {{ include('leraar/_delete_form.html.twig') }}
+{% endblock %}

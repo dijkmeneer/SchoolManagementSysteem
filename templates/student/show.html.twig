@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Student{% endblock %}
+
+{% block body %}
+    <h1>Student</h1>
+
+    {% if student.foto %}
+        <img src="{{ asset('uploads/fotos/' ~ student.foto.filename) }}" alt="{{ student.naam }}'s photo" style="max-width: 500px; max-height: 500px;">
+    {% endif %}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Naam</th>
+                <td>{{ student.naam }}</td>
+            </tr>
+            <tr>
+                <th>Leeftijd</th>
+                <td>{{ student.leeftijd }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class='btn' href="{{ path('app_student_index') }}">Terug naar lijst</a>
+
+    <a class='btn' href="{{ path('app_student_edit', {'id': student.id}) }}">Aanpassen</a>
+
+    {{ include('student/_delete_form.html.twig') }}
+{% endblock %}

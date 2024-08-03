@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Leraar index{% endblock %}
+
+{% block body %}
+    <h1>Leraar index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Leeftijd</th>
+                <th>Acties</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for leraar in leraars %}
+            <tr>
+                <td>{{ leraar.naam }}</td>
+                <td>{{ leraar.leeftijd }}</td>
+                <td>
+                    <a href="{{ path('app_leraar_show', {'id': leraar.id}) }}">Bekijk</a>
+                    <a href="{{ path('app_leraar_edit', {'id': leraar.id}) }}">Aanpassen</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_leraar_new') }}">Create new</a>
+{% endblock %}

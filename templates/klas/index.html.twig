@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Klas index{% endblock %}
+
+{% block body %}
+    <h1>Klassen</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Leraren</th>
+                <th>Acties</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for klas in klas %}
+            <tr>    
+                <td>{{ klas.naam }}</td>
+                <td>
+                    {% for leraar in klas.leraar %}
+                        <a href="{{ path('app_leraar_show', {'id': leraar.id}) }}">{{ leraar.naam }}</a>{% if not loop.last %}, {% endif %}
+                    {% else %}
+                        No teachers found
+                    {% endfor %}
+                </td>
+                <td>
+                    <a href="{{ path('app_klas_show', {'id': klas.id}) }}">Bekijk</a>
+                    <a href="{{ path('app_klas_edit', {'id': klas.id}) }}">Aanpassen</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_klas_new') }}">Nieuwe klas aanmaken</a>
+{% endblock %}
